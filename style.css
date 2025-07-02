@@ -35,8 +35,9 @@ header img {
 main {
     flex: 1;
     padding: 0 8vw;
-    
+
 }
+
 h1 {
     padding: 128px 0;
     font-size: 3em;
@@ -45,17 +46,18 @@ h1 {
 
 .img-elem-container {
     display: flex;
-}
-.img-elem {
-    display: flex;
     flex-wrap: wrap;
-    width: 150px;
-    height: 150px;
+    height: 200px;
+    gap: 24px;
+}
+
+.img-elem {
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     object-position: center;
     border: 2px solid var(--bg-clr-light);
     border-radius: 10px;
-    gap: 24px;
 }
 
 footer {
