@@ -10,6 +10,10 @@
 :root {
     --bg-clr-dark: rgb(5, 23, 30);
     --bg-clr-light: rgb(8, 32, 41);
+    --padding-normal: 0 8vw;
+    --padding-small: 0 4vw;
+    --footer-header-height-large: 80px;
+    --footer-header-height-small: 64px
 }
 
 body {
@@ -20,26 +24,40 @@ body {
     color: white;
 }
 
-header,
-footer {
-    padding: 0 8vw;
+header{
+    padding: var(--padding-normal);
+    height: var(--footer-header-height-large);
     background-color: var(--bg-clr-light);
-
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+footer {
+    padding: var(--padding-normal);
+    height: 80px;
+    background-color: var(--bg-clr-light);
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
 }
 
 header img {
     height: 64px;
-    padding: 8px 0;
 }
 
 main {
+    padding: var(--padding-normal);
     flex: 1;
-    padding: 0 8vw;
-
 }
 
 h1 {
-    padding: 128px 0;
+    padding: 64px 0;
     font-size: 3em;
     text-align: center;
 }
@@ -47,7 +65,6 @@ h1 {
 .img-elem-container {
     display: flex;
     flex-wrap: wrap;
-    height: 200px;
     gap: 24px;
 }
 
@@ -56,8 +73,14 @@ h1 {
     height: 200px;
     object-fit: cover;
     object-position: center;
-    border: 2px solid var(--bg-clr-light);
+    /* border: 3px solid var(--bg-clr-light); */
     border-radius: 10px;
+    transition: all 0.2s;
+}
+.img-elem:hover{
+    transform: scale(1.03);
+    box-shadow: 3px 3px 10px white;
+
 }
 
 footer {
