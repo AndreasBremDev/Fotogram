@@ -12,7 +12,7 @@ let imgsLoad = [
 ];
 const imgsRef = document.getElementById('imgsRef');
 
-renderImages();
+
 
 function renderImages() {
     // imgsRef = '';
