@@ -102,10 +102,10 @@ function createOverlayContent(i, imagesFotogram) {
                 <img id="playPause" onclick="diashowStop(), stopBubbling(event)" src="./img/icons/pause-solid.svg">
                 Diashow
             </button> 
-            <p>${imagesFotogram[i].title} - ${imagesFotogram[i].location}</p>
+            <p>${imagesFotogram[i].title}</p>
             <button onclick="overlayOff()" class="btn-close">X</button>
         </div>
-        <img src="./img/${imagesFotogram[i]}" alt=picture${[i + 1]} class="img-overlay">
+        <img src="./img/${imagesFotogram[i].filename}" alt="picture${[i + 1]}" class="img-overlay">
         <div class="overlayBottom">
             <button onclick="overlayOn(${i - 1}), diashowStop()" class="btn-prev">&lt;</button>
             <p>${i + 1} / ${imagesFotogram.length}</p>
