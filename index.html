@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,22 @@
 
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-    
+
 </head>
+
 <body onload="renderImagesSmall()">
     <header>
-        <img src="./img/icons/Fotogram_Logo.svg" alt="Fotogram Logo">
+        <img src="./img/icons/Fotogram_Logo.svg" alt="Fotogram Logo" class="head-logo-large">
+        <img src="./img/icons/favicon.svg" alt="Logo" class="head-logo-small">
         <nav>
 
-        </nav> 
+        </nav>
     </header>
-    
-    <h1>photo album</h1>
-    
+
+    <h1>selected photos</h1>
+
     <main>
-        
+
         <div id="imgSmallRef" class="img-elem-container">
         </div>
         <div id="overlay" class="overlay d_none"></div>
@@ -29,17 +32,27 @@
 
     </main>
 
-    
+
 
     </div>
-    
+
     <footer>
         <div>(c) 2025 AndreasBremDev </div>
         <div class="social">
-            facebook <br>
-            linkedIn <br>
-            GitHub <br>
+            <a href="https://www.facebook.com/andreas.steinig.1/">
+                <img src="./img/icons/facebook-brands.svg" alt="Facebook-Symbol">
+                <span class="social-name">facebook |</span>
+            </a> 
+            <a href="https://www.linkedin.com/in/andreas-brem-473853b4/">
+                <img src="./img/icons/linkedin-brands.svg" alt="LinkedIn-Symbol">
+                <span class="social-name">linkedIn |</span>
+            </a>
+            <a href="https://github.com/AndreasBremDev">
+            <img src="./img/icons/github-brands.svg" alt="GitHub-Symbol">
+            <span class="social-name">GitHub</span>
+            </a>
         </div>
     </footer>
 </body>
+
 </html>

@@ -9,57 +9,68 @@ let imagesFotogram = [
     {
         filename: '01.webp',
         title: 'Schloss Burghausen',
-        location: 'Burghausen'
+        location: 'Burghausen',
+        link: 'https://maps.app.goo.gl/5ZPRLdBbWwADJn2k8'
     },
     {
         filename: '02.webp',
         title: 'Alpen Aussicht',
-        location: 'Ostersehen'
+        location: 'Ostersehen',
+        link: 'https://maps.app.goo.gl/sABHa2Gd9QH1vC3cA'
     },
     {
         filename: '03.webp',
         title: 'Karlsfelder See',
-        location: 'bei München'
+        location: 'bei München',
+        link: 'https://maps.app.goo.gl/ZHnxHNwMkcTT72eQ6'
     },
     {
         filename: '04.webp',
         title: 'Aussicht auf Bad Tölz',
-        location: 'Bad Tölz'
+        location: 'Bad Tölz',
+        link: 'https://maps.app.goo.gl/ZHnxHNwMkcTT72eQ6'
     },
     {
         filename: '05.webp',
         title: 'krorriger Baum',
-        location: 'Schlosspark Nymphenburg'
+        location: 'Schlosspark Nymphenburg',
+        link: 'https://maps.app.goo.gl/jTiU8soPa3z7erte8'
     },
     {
         filename: '06.webp',
         title: 'Palmen in Sahl Hasheesh',
-        location: 'Ägypten'
+        location: 'Ägypten',
+        link: 'https://maps.app.goo.gl/MTMGsdN7wdDxfnwW8'
     },
     {
         filename: '07.webp',
-        title: 'Palmen in Sahl Hasheesh',
-        location: 'Ägypten'
+        title: 'Strandansicht in Sahl Hasheesh',
+        location: 'Ägypten',
+        link: 'https://maps.app.goo.gl/j1oeZArXBzig42iW7'
     },
     {
         filename: '08.webp',
         title: 'Fontaine',
-        location: 'Olympiapark'
+        location: 'Olympiapark',
+        link: 'https://maps.app.goo.gl/j1oeZArXBzig42iW7'
     },
     {
         filename: '09.webp',
         title: 'Olympiapark',
-        location: 'München'
+        location: 'München',
+        link: 'https://maps.app.goo.gl/uQV3R6MFkL4y3EyYA'
     },
     {
         filename: '10.webp',
         title: 'Amper',
-        location: 'bei München'
+        location: 'bei München',
+        link: 'https://maps.app.goo.gl/1ZXi24K3S4MDhDPS9'
     },
         {
         filename: '11.webp',
-        title: 'Feldmochinger See',
-        location: 'bei München'
+        title: 'Fasaneriesee',
+        location: 'München',
+        link: 'https://maps.app.goo.gl/qHz5VMKTujmKhzy98'
     }
 ]
 
@@ -102,8 +113,10 @@ function createOverlayContent(i, imagesFotogram) {
                 <img id="playPause" onclick="diashowStop(), stopBubbling(event)" src="./img/icons/pause-solid.svg">
                 Diashow
             </button> 
-            <p>${imagesFotogram[i].title}</p>
             <button onclick="overlayOff()" class="btn-close">X</button>
+        </div>
+        <div class="overlayTitle">
+            <p>${imagesFotogram[i].title} -&nbsp<a href="${imagesFotogram[i].link}" target="_blank" class="a-location">${imagesFotogram[i].location}</a></p>
         </div>
         <img src="./img/${imagesFotogram[i].filename}" alt="picture${[i + 1]}" class="img-overlay">
         <div class="overlayBottom">
@@ -142,19 +155,3 @@ function diashowStop() {
     clearInterval(myInterval);
     playPause.src = "./img/icons/pause-solid.svg";
 }
-
-
-// imageWrapper.addEventListener('touchstart', (e) => {
-//     startX = e.touches[0].clientX;
-// });
-
-// imageWrapper.addEventListener('touchend', (e) => {
-//     const endX = e.changedTouches[0].clientX;
-//     let diffX = endX - startX;
-
-//     if (diffX > 50) { // Swipe rechts
-//         goToImage(currentIndex - 1);
-//     } else if (diffX < -50) { // Swipe links
-//         goToImage(currentIndex + 1);
-//     }
-// });
