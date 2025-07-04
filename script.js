@@ -1,10 +1,3 @@
-
-let imgsLoad = [
-    'band1.png',
-    'band2.png',
-    'band3.png'
-];
-
 let imagesFotogram = [
     {
         filename: '01.webp',
@@ -91,9 +84,6 @@ function renderSmallImages(i, imagesFotogram) {
     </a></span>`;
 };
 
-
-// ONLY UNTIL UP HERE
-
 function overlayOn(i) {
     overlayRef.style.display = "block";
     if (i > imagesFotogram.length - 1) {
@@ -136,7 +126,6 @@ function overlayOff() {
 function stopBubbling(event) {
     event.stopPropagation();
 }
-
 
 function diashow(i) {
     document.getElementById('playPause').src = "./img/icons/play-solid.svg";
