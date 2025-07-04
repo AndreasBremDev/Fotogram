@@ -45,7 +45,7 @@ let imagesFotogram = [
         filename: '08.webp',
         title: 'Fontaine',
         location: 'Olympiapark',
-        link: 'https://maps.app.goo.gl/j1oeZArXBzig42iW7'
+        link: 'https://maps.app.goo.gl/WvzRXkMmvCKUsuNe6'
     },
     {
         filename: '09.webp',
