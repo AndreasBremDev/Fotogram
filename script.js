@@ -133,13 +133,13 @@ function stopBubbling(event) {
 function diashow(i) {
     if (!diashowCalled) {
         diashowCalled = true;
+        document.getElementById('playPause').src = "./img/icons/play-solid.svg";
         myInterval = setInterval(() => {
             i += 1;
             if (i > imagesFotogram.length - 1) {
                 i = 0;
             }
             overlayOn(i);
-            document.getElementById('playPause').src = "./img/icons/play-solid.svg";
         }, 2500);
     } else {
         diashowStop();
