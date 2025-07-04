@@ -8,7 +8,7 @@ let imagesFotogram = [
     {
         filename: '02.webp',
         title: 'Alpen Aussicht',
-        location: 'Ostersehen',
+        location: 'Osterseen',
         link: 'https://maps.app.goo.gl/sABHa2Gd9QH1vC3cA'
     },
     {
