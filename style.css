@@ -20,7 +20,6 @@
     display: none;
 }
 
-
 body {
     background-color: var(--bg-clr-dark);
     display: flex;
@@ -28,6 +27,8 @@ body {
     height: 100vh;
     color: white;
 }
+
+/***************** HEADER **********************/
 
 header {
     padding: var(--padding-normal);
@@ -40,8 +41,6 @@ header {
     display: flex;
     align-items: center;
 }
-
-
 
 header img {
     height: 64px;
@@ -83,7 +82,8 @@ h1 {
     cursor: pointer;
 }
 
-/************* */
+/***************** OVERLAY **********************/
+
 .overlay {
     position: fixed;
     top: 0;
@@ -109,20 +109,29 @@ h1 {
     align-items: center;
     padding: 20px;
     background-color: var(--bg-clr-light);
-    width: 90vw;
-    height: 50vh;
+    width: 70vw;
+    height: 55vh;
     border-radius: 20px;
 }
 
 .overlayTop {
     display: flex;
-    width: 80vw;
+    width: 60vw;
     justify-content: space-between;
     padding-bottom: 8px;
 }
+
+.overlayBottom {
+    display: flex;
+    width: 60vw;
+    justify-content: space-between;
+    padding-top: 8px;
+}
+
 .overlayTop button {
     flex-grow: 0;
 }
+
 .overlayTop p {
     margin: 0 auto;
     width: fit-content;
@@ -130,8 +139,8 @@ h1 {
 }
 
 .img-overlay {
-    width: 80vw;
-    height: 40vh;
+    max-width: 60vw;
+    max-height: 40vh;
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
@@ -176,13 +185,6 @@ h1 {
 }
 
 
-.overlayBottom {
-    display: flex;
-    width: 80vw;
-    justify-content: space-between;
-    padding-top: 8px;
-}
-
 /***************** FOOTER **********************/
 
 footer {
@@ -196,4 +198,10 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+@media(max-width:450px){
+    .overlayTop p {
+        display: none;
+    }
 }
