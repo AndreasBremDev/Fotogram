@@ -59,7 +59,7 @@ let imagesFotogram = [
         location: 'bei München',
         link: 'https://maps.app.goo.gl/1ZXi24K3S4MDhDPS9'
     },
-        {
+    {
         filename: '11.webp',
         title: 'Fasaneriesee',
         location: 'München',
@@ -70,6 +70,7 @@ let imagesFotogram = [
 const imgSmallRef = document.getElementById('imgSmallRef');
 const overlayRef = document.getElementById('overlay');
 let myInterval;
+let diashowCalled = false;
 
 function renderImagesSmall() {
     for (let i = 0; i < imagesFotogram.length; i++) {
@@ -92,13 +93,14 @@ function overlayOn(i) {
         i = imagesFotogram.length - 1;
     }
     overlayRef.innerHTML = createOverlayContent(i, imagesFotogram);
+    document.body.classList.add('no-scroll');
 };
 
 function createOverlayContent(i, imagesFotogram) {
     return `
     <div onclick="stopBubbling(event)" id="overlayImgContainer" class="overlay-img-container">
         <div class="overlayTop">
-            <button onclick="diashow(${i})" class="btn-diashow">
+            <button onclick="diashow(${i}), stopBubbling(event)" class="btn-diashow">
                 <img src="./img/icons/favicon.svg">               
                 <img id="playPause" onclick="diashowStop(), stopBubbling(event)" src="./img/icons/pause-solid.svg">
                 Diashow
@@ -120,6 +122,7 @@ function createOverlayContent(i, imagesFotogram) {
 
 function overlayOff() {
     overlayRef.style.display = "none";
+    document.body.classList.remove('no-scroll');
     diashowStop();
 }
 
@@ -128,19 +131,24 @@ function stopBubbling(event) {
 }
 
 function diashow(i) {
-    document.getElementById('playPause').src = "./img/icons/play-solid.svg";
-    myInterval = setInterval(() => {
-        i += 1;
-        if (i > imagesFotogram.length - 1) {
-            i = 0;
-        }
-        overlayOn(i);
-        document.getElementById('playPause').src = "./img/icons/play-solid.svg";
-    }, 2500);
-
+    if (!diashowCalled) {
+        diashowCalled = true;
+        myInterval = setInterval(() => {
+            i += 1;
+            if (i > imagesFotogram.length - 1) {
+                i = 0;
+            }
+            overlayOn(i);
+            document.getElementById('playPause').src = "./img/icons/play-solid.svg";
+        }, 2500);
+    } else {
+        diashowStop();
+        
+    }
 }
 
 function diashowStop() {
     clearInterval(myInterval);
-    playPause.src = "./img/icons/pause-solid.svg";
+    diashowCalled = false;
+    document.getElementById('playPause').src = "./img/icons/pause-solid.svg";
 }
