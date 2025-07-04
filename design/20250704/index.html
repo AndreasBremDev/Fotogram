@@ -10,26 +10,25 @@
     <script defer src="script.js"></script>
     
 </head>
-<body onload="renderImagesSmall()">
+<body onload="renderImagesMain()">
     <header>
         <img src="./img/icons/Fotogram_Logo.svg" alt="Fotogram Logo">
         <nav>
 
         </nav> 
     </header>
-    
     <h1>photo album</h1>
     
     <main>
         
-        <div id="imgSmallRef" class="img-elem-container">
+        <div id="imgsRef" class="img-elem-container">
         </div>
-        <div id="overlay" class="overlay d_none"></div>
-
+        <div id="largeImgsRef">
+        </div>
 
     </main>
 
-    
+    <div id="overlay" onclick="renderOverlay()" class="overlay d_none">
 
     </div>
     

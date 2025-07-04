@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-clr-dark: rgb(5, 23, 30);
+    --bg-clr-light: rgb(8, 32, 41);
+    --padding-normal: 0 8vw;
+    --padding-small: 0 4vw;
+    --footer-header-height-large: 80px;
+    --footer-header-height-small: 64px
+}
+
+.d_none {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+}
+
+body {
+    background-color: var(--bg-clr-dark);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: white;
+}
+
+header {
+    padding: var(--padding-normal);
+    height: var(--footer-header-height-large);
+    background-color: var(--bg-clr-light);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+footer {
+    padding: var(--padding-normal);
+    height: 80px;
+    background-color: var(--bg-clr-light);
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    height: 64px;
+}
+
+main {
+    padding: 0px 8vw 32px 8vw;
+    flex: 1;
+}
+
+h1 {
+    padding: 112px 0 32px 0;
+    font-size: 3em;
+    text-align: center;
+}
+
+.img-elem-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.img-elem {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    /* border: 3px solid var(--bg-clr-light); */
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.img-elem:hover {
+    transform: scale(1.03);
+    box-shadow: 3px 3px 10px white;
+    cursor: pointer;
+}
+
+
+/* RENDER LARGE IMAGES */
+
+.image-container {
+    width: 300px;
+    /* oder eine andere Breite */
+    overflow: hidden;
+    /* Verbergen der überstehenden Bilder */
+    border-radius: 10px;
+    position: relative;
+    z-index: 10;
+    /* min-height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper {
+    display: flex;
+    transition: transform 0.3s ease;
+    /* Geschmeidige Animation */
+
+}
+
+.image {
+    width: 300px;
+    /* Breite muss mit Container übereinstimmen */
+    flex-shrink: 0;
+    /* Verhindert, dass Bilder kleiner werden */
+    z-index: 4;
+}
+
+
+
+.prev-button,
+.next-button {
+    padding: 10px 5px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    z-index: 6;
+}
+.prev-button {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.next-button {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%, -50%);
+}
