@@ -145,21 +145,21 @@ h1 {
     align-items: center;
     padding: 20px;
     background-color: var(--bg-clr-light);
-    width: 70vw;
-    height: 60vh;
+    width: 90vw;
+    height: 80vh;
     border-radius: 20px;
     box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
 }
 
 .overlayTop {
     display: flex;
-    width: 60vw;
+    width: 70vw;
     justify-content: space-between;
 }
 
 .overlayBottom {
     display: flex;
-    width: 60vw;
+    width: 70vw;
     justify-content: space-between;
     padding-top: 8px;
 }
@@ -185,14 +185,13 @@ h1 {
 }
 
 .img-overlay {
-    max-width: 60vw;
-    height: 40vh;
+    max-width: 70vw;
+    height: 60vh;
     flex: 1;
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
     box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
-
 }
 
 .btn-diashow img {
