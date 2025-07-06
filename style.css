@@ -78,6 +78,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
+    justify-content: center;
 }
 
 .img-small {
@@ -173,7 +174,13 @@ h1 {
     color: white;
     
 }
-.overlayTitle a:hover {
+
+.a-location{
+    font-style: italic;
+}
+
+.a-location:hover {
+    text-decoration: underline;
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
 }
 

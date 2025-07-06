@@ -101,8 +101,8 @@ function createOverlayContent(i, imagesFotogram) {
     <div onclick="stopBubbling(event)" id="overlayImgContainer" class="overlay-img-container">
         <div class="overlayTop">
             <button onclick="diashow(${i}), stopBubbling(event)" class="btn-diashow">
-                <img src="./img/icons/favicon.svg">               
-                <img id="playPause" onclick="diashowStop(), stopBubbling(event)" src="./img/icons/pause-solid.svg">
+                <img src="./img/icons/favicon.svg" >               
+                <img id="playPause" src="./img/icons/play-solid.svg" class="d_none">
                 Diashow
             </button> 
             <button onclick="overlayOff()" class="btn-close">X</button>
@@ -131,24 +131,26 @@ function stopBubbling(event) {
 }
 
 function diashow(i) {
+    document.getElementById('playPause').classList.remove('d_none');
     if (!diashowCalled) {
         diashowCalled = true;
-        document.getElementById('playPause').src = "./img/icons/play-solid.svg";
         myInterval = setInterval(() => {
             i += 1;
             if (i > imagesFotogram.length - 1) {
                 i = 0;
             }
             overlayOn(i);
-        }, 2500);
+            document.getElementById('playPause').classList.toggle('d_none');
+        }, 2000);
     } else {
         diashowStop();
-        
+        diashowCalled = false;
+        document.getElementById('playPause').src = ""; // ./img/icons/pause-solid.svg
     }
 }
 
 function diashowStop() {
     clearInterval(myInterval);
-    diashowCalled = false;
-    document.getElementById('playPause').src = "./img/icons/pause-solid.svg";
+
+
 }
