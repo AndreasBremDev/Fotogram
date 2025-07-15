@@ -21,7 +21,7 @@ let imagesFotogram = [
         filename: '04.webp',
         title: 'Aussicht auf Bad Tölz',
         location: 'Bad Tölz',
-        link: 'https://maps.app.goo.gl/ZHnxHNwMkcTT72eQ6'
+        link: 'https://maps.app.goo.gl/fCBWcb7Niv7EPMpY8'
     },
     {
         filename: '05.webp',
