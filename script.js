@@ -100,7 +100,7 @@ function createOverlayContent(i, imagesFotogram) {
     return `
     <div onclick="stopBubbling(event)" id="overlayImgContainer" class="overlay-img-container">
         <div class="overlayTop">
-            <button onclick="diashow(${i}), stopBubbling(event)" class="btn-diashow">
+            <button onclick="diashow(${i}); stopBubbling(event)" class="btn-diashow">
                 <img src="./img/icons/favicon.svg" >               
                 <img id="playPause" src="./img/icons/play-solid.svg" class="d_none">
                 Diashow
@@ -112,9 +112,9 @@ function createOverlayContent(i, imagesFotogram) {
         </div>
         <img src="./img/${imagesFotogram[i].filename}" alt="picture${[i + 1]}" class="img-overlay">
         <div class="overlayBottom">
-            <button onclick="overlayOn(${i - 1}), diashowStop()" class="btn-prev">&lt;</button>
+            <button onclick="overlayOn(${i - 1}); diashowStop()" class="btn-prev">&lt;</button>
             <p>${i + 1} / ${imagesFotogram.length}</p>
-            <button onclick="overlayOn(${i + 1}), diashowStop()" class="btn-next">&gt;</button>
+            <button onclick="overlayOn(${i + 1}); diashowStop()" class="btn-next">&gt;</button>
         </div>
     </div>
     `;
